@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Um Pouco De CSS</title>
+        <!--Referência de um arquivo css separado:-->
+        <link rel="stylesheet" href="UmPoucoDeCss.css">
+        
+        <!--Aplicando um estilo emcima das tags com CSS-->
+        <!--Para definir que quer uma classe em CSS é necessário que comece com "." e em seguida o nome de referência da classe como no exemplo abaixo da classe (fundoVermelho)-->
+        <!--Para definir que quer um id em CSS é necessário que comece com "#"-->
+        <style>
+            h1 {
+                display: nome;
+                background-color: red;
+                position: absolute;
+                top: 400px;
+                right: 400px;
+                font-size: 20px;
+            }
+            .fundoVermelho {
+                background-color: rgb(131, 14, 14);
+                margin-bottom: 50px;
+            }
+            .negrito {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS</h1>
+        <!--id que será seu identificador é uma boa pratica ser unico no sistema-->
+        <span id="textoPrincipal">Texto 1</span>
+        <!-- Já a classe mesmo sendo também um identificador, ela é associada muito a questão do estilo e que pode ser atribuida mais de uma vez dentro da página podendo ter mais de um elemento marcado com a mesma classe, sendo possível ainda marcar um elemento com mais de uma classe-->
+        <span class="fundoVermelho negrito">Texto 2</span>
+        <span class="fundoVermelho">Texto 3</span>
+    </body>
+</html>
