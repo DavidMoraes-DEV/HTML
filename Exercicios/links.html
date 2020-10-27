@@ -2,7 +2,7 @@
 
 <!-- URL Absoluta (No caso de URL Absoluta não é possível remover o https:// do link)-->
 <!--Nesse exemplo abaixo o link será aberto na mesma aba da página substituindo seu site pelo o do Google-->
-<a href="https://www.google.com.br">Google 1</a><br>
+<a id="inicio" href="https://www.google.com.br">Google 1</a><br>
 <!--Para abrir em uma nova aba em branco utilizar o target="_blank" como no exemplo abaixo -->
 <a href="https://www.google.com.br" target="_blank">Google 2</a><br><br>
 
@@ -10,3 +10,13 @@
 <a href="Index.html">Voltar 1</a><br>
 <a href="/Index.html">Votar 2</a><br>
 <a href="../Index.html">Voltar 3</a><br>
+
+<!--Link para email-->
+<a href="mailto:nomedoemail@email.com.br">Entre em contato</a><br><br>
+<!--CSS inline (não é uma boa prática)-->
+<div id="noticia" style="position: absolute;top: 2000px;">
+    <h1>Noticia Urgente!</h1>
+    <a href="#inicio">Voltar para o Inicio</a>
+</div>
+<!--Ancora para navegar na mesma página pelo id do local da página-->
+<a href="#noticia">Ir para Noticia</a>
