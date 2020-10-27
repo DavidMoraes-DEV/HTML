@@ -1,0 +1,59 @@
+<table>
+    <caption>PRODUTOS</caption>
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>IPad</td>
+            <td>3289,00</td>
+            <td>5</td>
+            <td>16445,00</td>
+        </tr>
+        <tr>
+            <td>Sansung S9</td>
+            <td>2649,00</td>
+            <td>8</td>
+            <td>21192,00</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <!--A propriedade colspan é responsavel por definir a quantidade de colunas que essa td irá ocupar e o rowspan define a quantidade de linhas-->
+            <td colspan="3">Total</td>
+            <td>37637,00</td>
+        </tr>
+    </tfoot>
+</table>
+
+<!--Códigos de estilo CSS-->
+<style>
+    table {
+        border-collapse: collapse;
+        border: 2px slategrey;
+
+    }
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    thead tr {
+        border-bottom: solid 3px #444;
+    }
+    /* :hover aplicará o efeito quando o cursor do mouse passar por cima da área especificada*/
+    tbody tr:hover {
+        background-color: #dedede;
+    }
+
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>
