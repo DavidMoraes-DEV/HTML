@@ -1,20 +1,31 @@
 <h1>Formulário</h1>
 
-<form action="http://localhost:3003/usuarios" method="POST">
+<form method="POST">
     
+    <!--Input escondido por exemplo para guardar o id do usuario e não aparece no formulario final-->
+    <input type="hidden" name="id" value="3">
+
+    <!-- Input de texto -->
     <input type="text" name="nome">
+    
+    <!--Input de Senha -->
     <input type="password" name="senha">
+    
+    <!-- TextArea -->
     <textarea name="bio" cols="30" rows="10"></textarea>
     
     <div>
+        <!-- Radio botton -->
         <input type="radio" name="tipo" value="admin"> Admin
         <input type="radio" name="tipo" value="regular"> Regular
     </div>
 
     <div>
+        <!-- Checkbox -->
         <input type="checkbox" name="ativo"> Ativo
     </div>
 
+    <!-- Input de seleção única-->
     <select name="estado">
         <option value="">Selecione</option>
         <option value="PR">Paraná</option>
@@ -22,6 +33,7 @@
         <option value="SC">Santa Catarina</option>
     </select>
 
+    <!-- Input de seleções multiplas -->
     <select name="interesses" multiple size="6">
         <option value="js">JavaScript</option>
         <option value="java">Java</option>
@@ -31,7 +43,8 @@
         <option value="c">C</option>
     </select>
     
-    <button>Incluir</button>
+    <button formaction="http://localhost:3003/usuarios">Incluir</button>
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
 </form>
 
 <style>
