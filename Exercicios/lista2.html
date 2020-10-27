@@ -2,10 +2,10 @@
 <!-- Exemplo básico de Listas Aninhadas -->
 <ul class="tree">
     <li>
-        Backend
+        <span folders>Backend</span>
         <ul>
             <li>
-                app
+                <span folders>App</span>
                 <ul>
                     <li>Produto.js</li>
                     <li>Usuario.js</li>
@@ -13,7 +13,7 @@
                 </ul>
             </li>
             <li>
-                config
+                <span folders>Config</span>
                 <ul>
                     <li>Banco.js</li>
                     <li>Rotas.js</li>
@@ -23,10 +23,10 @@
         </ul>
     </li>
     <li>
-        Frontend
+        <span folders>Frontend</span>
         <ul>
             <li>
-                public
+                <span folders>Public</span>
                 <ul>
                     <li>App.css</li>
                     <li>App.js</li>
@@ -36,3 +36,15 @@
         </ul>
     </li>
 </ul>
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<!--Para conseguir rodar esse script nesse caso acessar o caminho direto na barra do browser(Ex: http://localhost:1010/Exercicios/lista2.html), pois pelo pelo método .innerHTML do arquivo principal index, não executará o código script-->
+<script>
+    //Armazenando as ul com a função .nextElementSibling em uma constante
+    document.querySelectorAll('[folders]').forEach(folder => {
+        folder.onclick = function(e) {
+            const ul = folder.nextElementSibling
+            const d = ul.style.display
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+    })
+</script>
