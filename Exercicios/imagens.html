@@ -1,44 +1,52 @@
-<p>
-    <img src="Exercicios/imagens/1.jpg"
-    alt="Muro da Cidade"
-    width="513" height="342"
-    title="Muro da Cidade por Tarso Bessa">
-</p>
-
-<p>
-    <img src="Exercicios/imagens/2.gif"
-    alt="Connecting"
-    height="342"
-    title="Connecting">
-</p>
-
-<p class="circular">
-    <img src="Exercicios/imagens/3.png"
-    alt="Rio de Janeiro"
-    height="342">
-</p>
-
-<p class="texto">
-    <img src="Exercicios/imagens/4.jpg"
-    alt="Avatar"
-    height="50"
-    align="left">
-    "Na HTML, as imagns são definidas com a tag img. A tag img é vazia, o que significa que ela somente atributos e não tem tag de fechamento Para exibir uma imagen em uma página, você necessita usar o atributo src. Src significa "source" [fonte]. O valor do atributo src é a URL da imagem que você quer exibir na sua página."
-
-</p>
-
-<p class="cidade"></p>
-
-<p>
-    <!--Na tag picture se tem a possibilidade de inserir várias fontes(src) e aplicar critérios de exibição(media=(margin-right: 600px), se for menor ela não irá aparecer e irá descer para a próxima imagens e seus créterios, essa é uma maneira de escolher através de condições específicas qual imagem será exibida) será exibida apenas se seu tamanho for no minimo de 600px) encima de todas as imagens contidas na tag picture-->
-    <picture>
-        <source srcset="Exercicios/imagens/6.png"
-            media="(min-width: 90px)">
-        <img src="Exercicios/imagens/2.gif" alt="Alternativa 2">
-    </picture>
-</p>
+<div sliderr>
+    <p>
+        <img src="./imagens/1.jpg"
+        alt="Muro da Cidade"
+        width="513" height="342"
+        title="Muro da Cidade por Tarso Bessa">
+    </p>
+    
+    <p>
+        <img src="./imagens/2.gif"
+        alt="Connecting"
+        height="342"
+        title="Connecting">
+    </p>
+    
+    <p class="circular">
+        <img src="./imagens/3.png"
+        alt="Rio de Janeiro"
+        height="342">
+    </p>
+    
+    <p class="texto">
+        <img src="./imagens/4.jpg"
+        alt="Avatar"
+        height="50"
+        align="left">
+        "Na HTML, as imagns são definidas com a tag img. A tag img é vazia, o que significa que ela somente atributos e não tem tag de fechamento Para exibir uma imagen em uma página, você necessita usar o atributo src. Src significa "source" [fonte]. O valor do atributo src é a URL da imagem que você quer exibir na sua página."
+    
+    </p>
+    
+    <p class="cidade"></p>
+    
+    <p>
+        <!--Na tag picture se tem a possibilidade de inserir várias fontes(src) e aplicar critérios de exibição(media=(margin-right: 600px), se for menor ela não irá aparecer e irá descer para a próxima imagens e seus créterios, essa é uma maneira de escolher através de condições específicas qual imagem será exibida) será exibida apenas se seu tamanho for no minimo de 600px) encima de todas as imagens contidas na tag picture-->
+        <picture>
+            <source srcset="./imagens/6.png"
+                media="(min-width: 90px)">
+            <img src="./imagens/2.gif" alt="Alternativa 2">
+        </picture>
+    </p>
+</div>
 
 <style>
+
+    p {
+        position: absolute;
+        display: none;
+    }
+
     .circular {
         width: 513px;
         background-color: #444;
@@ -55,9 +63,27 @@
     .cidade {
         width: 513px;
         height: 342px;
-        background-image: url("Exercicios/imagens/5.jpg");
+        background-image: url("./imagens/5.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 200%;
     }
 </style>
+
+<script>
+    function mover(elem, inicio, fim, passo, callbak) {
+        const novoInicio = inicio - passo
+        if (novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+        } else {
+            callback()
+        }
+    }
+
+    const p = document.querySelector('[sliderr] > p')
+    p.style.display = 'block'
+    mover(p, 2000, -520, 5, () => {
+        console.log("Terminou!!!")
+    })
+</script>
