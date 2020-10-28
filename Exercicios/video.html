@@ -1,4 +1,4 @@
-<video id="meuVideo" width="800" height="450" controls controlsList='nodownload'>
+<video id="meuVideo" width="800" height="450">
     <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
 </video>
 
@@ -30,3 +30,23 @@
         width: 0%;
     }
 </style>
+
+<script>
+    function configurarVideo(id) {
+        const video = document.getElementById(id)
+        // .oncontextmenu = () => false configura para que não seja possível o usuário acessar o menu de contexto do video impossibilitando que ele consiga realizar o download do video por exemplo
+        video.oncontextmenu = () => false
+
+        document.querySelector(`[play=${id}`).onclick = e => video.play()
+        document.querySelector(`[pause = ${id}`).onclick = e => video.pause()
+        
+        setInterval(() => {
+            const percentual = (video.currentTime / video.duration) * 100
+            const valorDiv = document.querySelector(`[progresso=${id}] > div`)
+            valorDiv.style.width = `${percentual}%`
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%`
+        }, 500)
+   }
+
+    configurarVideo('meuVideo')
+</script>
